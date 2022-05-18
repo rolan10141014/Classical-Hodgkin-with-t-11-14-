@@ -1,5 +1,6 @@
 > #mydata is represented by the TRONCO_BINARY_DATA in the supplemental data
 > #R package used to analyze the clone evolution: TRONCO
+>library(TRONCO)
 >dataset_plain = import.genotypes(mydata, event.type='RCA')
 > dataset = events.selection(dataset_plain, filter.in.names = c('X1pL','X1qL','X2qL','X4qL','X5pL','X6qL','X7qL','X8qL','X9qL','X10qL','X10pL','X11qL','X12qL','X12pL','X13qL','X14qL','X15qL','X.16','X.17','X.18','X19pL','X.20','X.21','X.22','X8q24R','X1pR','X2qR','X3qR','X6qR','X13qR','P3','XqL'))
 > gene.hypothesis = c('X1pL','X1qL','X2qL','X4qL','X5pL','X6qL','X7qL','X8qL','X9qL','X10qL','X10pL','X11qL','X12qL','X12pL','X13qL','X14qL','X15qL','X.16','X.17','X.18','X19pL','X.20','X.21','X.22','X8q24R','X1pR','X2qR','X3qR','X6qR','X13qR','P3','XqL')
@@ -15,6 +16,18 @@
                           legend.cex = 0.35,
                           pathways = list(priors = dataset2),
                          label.edge.size = 10)
+                         
+ #prediction of driver cytogenetic abnormalities using the DriverNet algorithm
+ #files found in the supplemental section
+ >library (DriverNet)
+ >data(DRIVER_MUT)
+ >data(INFLUENCE_MATRIX_2)
+ >data(OUTLIER_MATRIX_2)
+ >computeDrivers(DRIVER_MUT, OUTLIER_MATRIX_2, INFLUENCE_MATRIX_2, outputFolder = NULL,
+  printToConsole = FALSE, weighted = FALSE)
+
+
+ 
 
 
 
