@@ -23,8 +23,9 @@
  >data(DRIVER_MUT)
  >data(INFLUENCE_MATRIX_2)
  >data(OUTLIER_MATRIX_2)
- >computeDrivers(DRIVER_MUT, OUTLIER_MATRIX_2, INFLUENCE_MATRIX_2, outputFolder = NULL,
+ >DRIVER_LIST<-computeDrivers(DRIVER_MUT, OUTLIER_MATRIX_2, INFLUENCE_MATRIX_2, outputFolder = NULL,
   printToConsole = FALSE, weighted = FALSE)
+  data(DRIVER_LIST)
 
 
  
