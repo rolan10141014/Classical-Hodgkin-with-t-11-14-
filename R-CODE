@@ -1,4 +1,4 @@
-> #mydata is represented by the TRONCO_BINARY_DATA in the supplemental data
+> #mydata is represented by binary matrix including the total number of cases by recurrent cytogentic aberrations (RCA).
 > #R package used to analyze the clone evolution: TRONCO
 >library(TRONCO)
 >dataset_plain = import.genotypes(mydata, event.type='RCA')
@@ -18,7 +18,7 @@
                          label.edge.size = 10)
                          
  #prediction of driver cytogenetic abnormalities using the DriverNet algorithm
- #files found in the supplemental section
+ #DRIVER_MUT = binary matrix (same as mydata used above); INFLUENCE-MATRIX_2 = A binary correlation matrix of RCAs (RCA x RCA); OUTLIER_MATRIX_2= correlation matrix with replacement of 1 for "TRUE" and "0" for "FALSE".
  >library (DriverNet)
  >data(DRIVER_MUT)
  >data(INFLUENCE_MATRIX_2)
